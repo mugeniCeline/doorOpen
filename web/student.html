@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .form-section {
+            flex: 0 1 45%;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Management</h1>
+
+    <div class="form-sections">
+        <div class="form-section">
+            <h2>Create Student</h2>
+            <form id="createForm" method="post" action="Student">
+                <label>First Name:</label>
+                <input type="text" name="firstName">
+                <label>Last Name:</label>
+                <input type="text" name="lastName">
+                <label>Date of Birth:</label>
+                <input type="date" name="dateOfBirth">
+                <input type="submit" value="Save Student">
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>Edit Student</h2>
+            <form action="UpdateStudent">
+                <label>ID:</label>
+                <input type="text" name="studentId">
+                <label>First Name:</label>
+                <input type="text" name="firstName">
+                <label>Last Name:</label>
+                <input type="text" name="lastName">
+                <label>Date of Birth:</label>
+                <input type="date" name="dateOfBirth">
+                <input type="submit" value="Update">
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>Delete Student</h2>
+            <form action="Student">
+                <label>ID:</label>
+                <input type="text" name="studentId">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
